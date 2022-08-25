@@ -5,9 +5,9 @@ export const SliderControl = ({changeIndex, index, slideref, startSlide, stopSli
   return (
     <Flex h={`50px`} align='center' bg='darkblack'>
             <IconButton variant={'outline'} fontSize={`2.5em`} color='light' icon={<ChevronLeftIcon/>} onClick={()=>changeIndex(index-1)}/>
-            <Button variant={`outline`} border='none' color={`light`} _hover=''>
-            {slideref.current===null?<span onClick={()=>startSlide()} class="material-icons">play_arrow</span>:
-            <span onClick={()=>stopSlide()} class="material-icons">  stop </span>}  
+            <Button variant={`outline`} border='none' color={`light`} >
+            {slideref.current===null?<span onClick={()=>startSlide()} className="material-icons">play_arrow</span>:
+            <span onClick={()=>stopSlide()} className="material-icons">  stop </span>}  
             </Button>
             <IconButton mr='5px' variant={'outline'} fontSize={`2.5em`} color='light' icon={<ChevronRightIcon/>} onClick={()=>changeIndex(index+1)}/>
     </Flex>

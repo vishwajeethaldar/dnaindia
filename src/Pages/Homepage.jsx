@@ -6,7 +6,8 @@ import { ACTIONTYPES } from '../Context/actiontypes';
 import { Footer } from '../Components/Footer/Footer';
 import {Skeleton,Stack,Grid, GridItem, Box} from '@chakra-ui/react'
 import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
-import { BodyArea } from '../Components/Body/BodyArea';
+import { LatestNews } from '../Components/LatestNews/LatestNews';
+
 export const Homepage = () => {
   const {state, dispatch} = useContext(AppContext);
 
@@ -15,9 +16,9 @@ export const Homepage = () => {
   }, []);
 
   return (
-    <Stack w="100%">
+    <Stack w="100%"  bg='#eedeee'>
      
-       <Skeleton isLoaded={!state.isLoading}>
+      <Skeleton isLoaded={!state.isLoading}>
           <Header />
       </Skeleton>
       
@@ -25,12 +26,24 @@ export const Homepage = () => {
       <TopnewsSlider />
       </Skeleton>
 
-      <BodyArea  />
+    <Box w={'100%'} >
+        <Grid  w={['98%', '90%', '90%']} mx='auto' templateColumns={['100%','100%','23% 50% 27%']}>
+            <GridItem >
+              <LeftNavbar />
+            </GridItem>
+
+            <GridItem>                  
+                 <LatestNews />
+            </GridItem>
+            <GridItem>
+             
+            </GridItem>
+        </Grid>
+      </Box>
+
       <Box marginLeft={'50px'} w={['98%', '90%', '90%']}>
         
-        {/* <Grid minH="500px"  border='1px solid red'>
-            
-        </Grid> */}
+        
       </Box>
       
 

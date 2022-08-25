@@ -1,6 +1,6 @@
 import {Box, Flex} from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
-import { getTopNews } from '../../api/api';
+import { getNews } from '../../api/api';
 import { NewsDisplayArea } from './NewsDisplayArea';
 import { SliderControl } from './SliderControl';
 import { SliderTitle } from './SliderTitle';
@@ -41,7 +41,7 @@ const stopSlide = ()=>{
 
 
 const handleGetTopNews  = ()=>{
-   getTopNews().then((res)=>{
+    getNews('/topnews').then((res)=>{
     setTopNews(res.data);
     })
 }

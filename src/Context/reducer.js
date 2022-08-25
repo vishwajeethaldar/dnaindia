@@ -8,6 +8,7 @@ export const initState = {
       isAuth:true,
       token:null,
       data:[],
+      singleData:{},
       topnews:[]
 }
 export const reducer = (state, {type, payLoad}) => {
@@ -24,6 +25,8 @@ export const reducer = (state, {type, payLoad}) => {
       return {...state, token:payLoad, isAuth:true, isDataLoading:false}
     case ACTIONTYPES.LOGIN_FAILURE:
       return {...state, isError:true, isAuth:false, isDataLoading:false}
+    case ACTIONTYPES.GET_SINGLE_DATA_GET_DATA_SUCESS:
+      return {...state, isDataLoading:false, isSuccess:true,singleData:payLoad }
     default :
     return state;
   }

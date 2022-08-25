@@ -4,7 +4,8 @@ const Theme = extendTheme({
         primary:'#FFDE2F',
         darkblack:'#333',
         lightblack:'#999',
-        light:'#fff'
+        light:'#fff',
+        dimLight:"#efefef"
     }
 }) 
 

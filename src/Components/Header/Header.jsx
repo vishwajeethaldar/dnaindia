@@ -33,7 +33,7 @@ function Header() {
         <Box>
           <Popover>
             <PopoverTrigger>
-                <IconButton variant='outline' fontSize={`1.5em`} border={`none`} _hover={`bg='none'`} aria-label='Search database' icon={<SearchIcon />} />
+                <IconButton variant='outline' fontSize={`1.5em`} border={`none`}  aria-label='Search database' icon={<SearchIcon />} />
             </PopoverTrigger>
 
             <PopoverContent>
