@@ -24,6 +24,8 @@ export const reducer = (state, {type, payLoad}) => {
       return {...state, isDataLoading:false, isSuccess:true,data:payLoad, isError:false}
     case ACTIONTYPES.LOGIN_REQ:
       return {...state, isDataLoading:true}
+    case ACTIONTYPES.PROCCESS_COMPLETED:
+      return{...state, isDataLoading:false, isSuccess:true, isError:false}
     case ACTIONTYPES.LOGIN_SUCCESS:
       return {...state, token:payLoad, isAuth:true, isDataLoading:false}
     case ACTIONTYPES.LOGIN_FAILURE:

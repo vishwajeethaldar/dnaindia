@@ -10,5 +10,6 @@ export const ACTIONTYPES = {
         SEARCH_QUERY_UPDATE:"search-query-update",
         SEARCH_DATA_REQUEST:"search-req",
         SEARCH_DATA_SUCCESS:"search-success",
-        SEARCH_DATA_FAILURE:"search-faliure"
+        SEARCH_DATA_FAILURE:"search-faliure",
+        PROCCESS_COMPLETED:"processCompleted"
 }   

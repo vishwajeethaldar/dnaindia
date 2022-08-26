@@ -9,6 +9,10 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { LatestNews } from '../Components/LatestNews/LatestNews';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { HomePageTop } from '../Components/LatestNews/HomePageTop';
+import { NewsItemCard } from '../Components/Utils/NewsItemCard';
+import { MoreNewsLink } from '../Components/Utils/MoreNewsLink';
+import { HoemPageMid } from '../Components/Home/HoemPageMid';
 
 export const Homepage = () => {
   const {state, dispatch} = useContext(AppContext);
@@ -21,7 +25,6 @@ export const Homepage = () => {
 
   return (
     <Stack w="100%"  bg='#eedeee'>
-     
       <Skeleton isLoaded={!state.isLoading}>
           <Header>
             <SearchBtn/>
@@ -33,6 +36,7 @@ export const Homepage = () => {
       </Skeleton>
 
     <Box w={'100%'} >
+
         <Grid  w={['98%', '90%', '90%']} mx='auto' templateColumns={['100%','100%','23% 50% 27%']}>
             <GridItem >
               <Skeleton isLoaded={!state.isLoading}>
@@ -47,7 +51,12 @@ export const Homepage = () => {
             </GridItem>
 
             <GridItem>                  
-                 <LatestNews />
+                <Stack>
+                  <HomePageTop/>  
+                  <HoemPageMid/>
+                </Stack>
+
+               
             </GridItem>
             <GridItem>
              
@@ -55,13 +64,7 @@ export const Homepage = () => {
         </Grid>
       </Box>
 
-      <Box marginLeft={'50px'} w={['98%', '90%', '90%']}>
-        
-        
-      </Box>
-      
-
-      <Footer />
+    <Footer />
     </Stack>
   )
 }

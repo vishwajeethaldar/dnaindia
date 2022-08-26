@@ -1,6 +1,7 @@
 {
   "name": "upbeat-eggnog-8021",
   "version": "0.1.0",
+  "homepage":".",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.8",
