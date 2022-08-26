@@ -5,19 +5,29 @@ import { ACTIONTYPES } from '../../Context/actiontypes'
 import { AppContext } from '../../Context/AppContext'
 import { BreadcrumbLeftNav } from '../Utils/BreadcrumbLeftNav'
 import {NewsItemCard} from '../Utils/NewsItemCard'
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+
 export const LatestNews = () => {
   const {state, dispatch} = useContext(AppContext);
-  const HandleLatestNews = ()=>{
+ 
+  useEffect(()=>{
+    dispatch({type:ACTIONTYPES.GET_DATA_REQUESTED});
     getNews('/latestnews').then((res)=>{
       dispatch({type:ACTIONTYPES.GET_DATA_SUCCESS, payLoad:res.data});
     }).catch((err)=>{
       console.log(err);
     })
-  }
-
-  useEffect(()=>{
-    HandleLatestNews();
+    return ()=> dispatch({type:ACTIONTYPES.GET_DATA_SUCCESS, payLoad:[]})
   },[])
+
+  if(state.isLoading || state.isDataLoading){
+    return (
+        <Box padding='6' boxShadow='lg' bg='white' h="100%">
+            <SkeletonCircle size='10' />
+            <SkeletonText mt='4' noOfLines={4} spacing='4' />
+        </Box>
+    )
+  }
   return (
     <Stack>
         <Box>

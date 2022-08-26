@@ -7,6 +7,8 @@ import { Footer } from '../Components/Footer/Footer';
 import {Skeleton,Stack,Grid, GridItem, Box} from '@chakra-ui/react'
 import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { Photos } from '../Components/LeftNavbar/Photos/Photos';
+import { LeftNav } from '../Components/LeftNavbar/LeftNav';
+import { SearchBtn } from '../Components/Header/SearchBtn';
 
 export const PhotosPage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -19,7 +21,9 @@ export const PhotosPage = () => {
       <Stack w="100%"  bg='#eedeee'>
        
         <Skeleton isLoaded={!state.isLoading}>
-            <Header />
+             <Header>
+            <SearchBtn/>
+            </Header>
         </Skeleton>
         
         <Skeleton isLoaded={!state.isLoading}>
@@ -29,7 +33,14 @@ export const PhotosPage = () => {
       <Box w={'100%'} >
           <Grid  w={['98%', '90%', '90%']} mx='auto' templateColumns={['100%','100%','23% 50% 27%']}>
               <GridItem >
-                <LeftNavbar />
+              <Skeleton isLoaded={!state.isLoading}>
+                  <Box display={['block', 'block', 'none']}>
+                    <LeftNav/>
+                  </Box>
+                  <Box display={['none', 'none', 'block']}>
+                    <LeftNavbar />
+                  </Box>
+              </Skeleton>
               </GridItem>
   
               <GridItem>                  

@@ -1,4 +1,12 @@
-import {Stack, Link} from '@chakra-ui/react'
+import {Stack, Link, Button, Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,} from '@chakra-ui/react'
 import { MenuItem } from './MenuItem'
 
 
@@ -83,11 +91,11 @@ const menus = [
 ]
 export const LeftNavbar = () => {
   return (
-    <Stack >
+    <Stack> 
       {menus.map((item)=>{
           return  <MenuItem url={item.url} text={item.text} path={item.path} id={item.id} key={item.id}/>
       })}
-      
+
     </Stack>
   )
 }

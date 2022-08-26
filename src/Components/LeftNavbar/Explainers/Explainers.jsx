@@ -8,18 +8,28 @@ import { AppContext } from '../../../Context/AppContext'
 
 import { BreadcrumbLeftNav } from '../../Utils/BreadcrumbLeftNav'
 import {NewsItemCard} from '../../Utils/NewsItemCard'
-
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 export const Explainers = () => {
 const {state, dispatch} = useContext(AppContext); 
 
   useEffect(()=>{
+    dispatch({type:ACTIONTYPES.GET_DATA_REQUESTED})
     getNews('/explainers').then((res)=>{
       dispatch({type:ACTIONTYPES.GET_DATA_SUCCESS, payLoad:res.data});
     }).catch((err)=>{
       console.log(err);
     })
+    return ()=>dispatch({type:ACTIONTYPES.GET_DATA_SUCCESS, payLoad:[]});
   },[]);
 
+  if(state.isLoading || state.isDataLoading){
+    return (
+        <Box padding='6' boxShadow='lg' bg='white' h="100%">
+            <SkeletonCircle size='10' />
+            <SkeletonText mt='4' noOfLines={4} spacing='4' />
+        </Box>
+    )
+  }else{
     return (
       <Stack>
           <Box>
@@ -35,7 +45,7 @@ const {state, dispatch} = useContext(AppContext);
               {state.data && state.data.map((news)=>{
                     return (
                       <Box py="15px" px="5px" bg={`light`} mb="10px" borderRadius={`3px` } key={news.id}>
-                        <NewsItemCard flexDir="column" imgWidth="100%" gap="10px" id={news.id} imgLink={news.thumnail} newsTitle={news.title} path='photos' textFont={['1em','1.1em','1.2em']}/>
+                        <NewsItemCard flexDir="row" imgWidth="25%" gap="10px" id={news.id} imgLink={news.image} newsTitle={news.title} path='explainers' textFont={['1em','1.1em','1.2em']}/>
                       </Box>
                     )
               })}
@@ -43,4 +53,4 @@ const {state, dispatch} = useContext(AppContext);
           </Box>
       </Stack>)
 
-}
+}}

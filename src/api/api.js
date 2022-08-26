@@ -8,3 +8,11 @@ export const getNews = (path) => {
 export const getSingleNews = (path) => {
   return axios.get(path);
 }
+
+export const searchNews = (path, query) => {
+  return axios.get(path, {
+    params:{
+      q:query
+    }
+  });
+}

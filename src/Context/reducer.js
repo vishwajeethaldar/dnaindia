@@ -9,16 +9,19 @@ export const initState = {
       token:null,
       data:[],
       singleData:{},
-      topnews:[]
+      query:"",
+      searchData:{}
 }
+
 export const reducer = (state, {type, payLoad}) => {
+
   switch(type){
     case ACTIONTYPES.LOADING:
       return {...state, isLoading:payLoad}
     case ACTIONTYPES.GET_DATA_REQUESTED:
       return {...state, isDataLoading:true, isSuccess:false}
     case ACTIONTYPES.GET_DATA_SUCCESS:
-      return {...state, isDataLoading:false, isSuccess:true,data:payLoad}
+      return {...state, isDataLoading:false, isSuccess:true,data:payLoad, isError:false}
     case ACTIONTYPES.LOGIN_REQ:
       return {...state, isDataLoading:true}
     case ACTIONTYPES.LOGIN_SUCCESS:
@@ -26,7 +29,12 @@ export const reducer = (state, {type, payLoad}) => {
     case ACTIONTYPES.LOGIN_FAILURE:
       return {...state, isError:true, isAuth:false, isDataLoading:false}
     case ACTIONTYPES.GET_SINGLE_DATA_GET_DATA_SUCESS:
-      return {...state, isDataLoading:false, isSuccess:true,singleData:payLoad }
+      return {...state, isDataLoading:false, isSuccess:true,singleData:payLoad, isError:false }
+    case ACTIONTYPES.SEARCH_QUERY_UPDATE:
+      return {...state, query:payLoad};
+    case ACTIONTYPES.SEARCH_DATA_SUCCESS:
+      state.searchData[payLoad.key]=payLoad.data;
+      return state;
     default :
     return state;
   }

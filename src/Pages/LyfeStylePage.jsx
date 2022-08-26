@@ -6,6 +6,9 @@ import { ACTIONTYPES } from '../Context/actiontypes';
 import { Footer } from '../Components/Footer/Footer';
 import {Skeleton,Stack,Grid, GridItem, Box} from '@chakra-ui/react'
 import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
+import { Lifestyle } from '../Components/LeftNavbar/LifeStyle/Lifestyle';
+import { LeftNav } from '../Components/LeftNavbar/LeftNav';
+import { SearchBtn } from '../Components/Header/SearchBtn';
 
 export const LyfeStylePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -18,7 +21,9 @@ export const LyfeStylePage = () => {
       <Stack w="100%"  bg='#eedeee'>
        
         <Skeleton isLoaded={!state.isLoading}>
-            <Header />
+        <Header>
+            <SearchBtn/>
+            </Header>
         </Skeleton>
         
         <Skeleton isLoaded={!state.isLoading}>
@@ -28,12 +33,20 @@ export const LyfeStylePage = () => {
       <Box w={'100%'} >
           <Grid  w={['98%', '90%', '90%']} mx='auto' templateColumns={['100%','100%','23% 50% 27%']}>
               <GridItem >
-                <LeftNavbar />
+              <Skeleton isLoaded={!state.isLoading}>
+                  <Box display={['block', 'block', 'none']}>
+                    <LeftNav/>
+                  </Box>
+                  <Box display={['none', 'none', 'block']}>
+                    <LeftNavbar />
+                  </Box>
+              </Skeleton>
               </GridItem>
   
               <GridItem>                  
-                   
+                    <Lifestyle />
               </GridItem>
+
               <GridItem>
                
               </GridItem>
