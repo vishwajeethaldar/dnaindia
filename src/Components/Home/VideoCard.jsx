@@ -26,7 +26,7 @@ const [videData,setVideData] = useState([])
             {videData.map((item)=>{
                 return (
                     <Box minWidth={'50%'}  height={'100%'} py="20px" border={'1px solid #f93'} >
-                        <NewsItemCard justify={'top'} gap="20px" align="flex-start"flexDir={'column'} imgWidth={'100%'} imgLink={item.image} newsTitle={item.title}/>
+                        <NewsItemCard path="/videos" id={item.id} justify={'top'} gap="20px" align="flex-start"flexDir={'column'} imgWidth={'100%'} imgLink={item.image} newsTitle={item.title}/>
                     </Box>
                 )
             })}
