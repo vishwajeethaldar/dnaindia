@@ -16,7 +16,7 @@ import {
   PopoverAnchor,
 } from '@chakra-ui/react'
 import Searchbar from './Searchbar';
-function Header() {
+function Header({children}) {
   return (
     <Box w={'100%'} bg="primary">
       <Flex w={['98%', '90%', '90%']} mx='auto' h={'60px'} align="center" justify={`space-between`}>
@@ -31,20 +31,7 @@ function Header() {
             </Box>
         </Flex>
         <Box>
-          <Popover>
-            <PopoverTrigger>
-                <IconButton variant='outline' fontSize={`1.5em`} border={`none`} _hover={`bg='none'`} aria-label='Search database' icon={<SearchIcon />} />
-            </PopoverTrigger>
-
-            <PopoverContent>
-              <PopoverArrow />
-              {/* <PopoverCloseButton /> */}
-              {/* <PopoverHeader>Confirmation!</PopoverHeader> */}
-              <PopoverBody>
-                <Searchbar />
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
+       { children}
         </Box>
       </Flex>
     </Box>

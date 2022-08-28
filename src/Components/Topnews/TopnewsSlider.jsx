@@ -1,6 +1,6 @@
 import {Box, Flex} from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
-import { getTopNews } from '../../api/api';
+import { getNews } from '../../api/api';
 import { NewsDisplayArea } from './NewsDisplayArea';
 import { SliderControl } from './SliderControl';
 import { SliderTitle } from './SliderTitle';
@@ -41,7 +41,7 @@ const stopSlide = ()=>{
 
 
 const handleGetTopNews  = ()=>{
-   getTopNews().then((res)=>{
+    getNews('/topnews').then((res)=>{
     setTopNews(res.data);
     })
 }
@@ -55,7 +55,7 @@ useEffect(() => {
     <Box w='100%'>   
         <Flex w={['98%', '90%', '90%']} mx='auto' bg='darkblack' h='50px'>
             <SliderTitle title={'Top News'} height='50px'/>
-            <NewsDisplayArea width="70%" height="50px" newsTitle={topNews[newsIndex]}/>
+            <NewsDisplayArea width="70%" height="50px" newsTitle={topNews[newsIndex] }/>
             <Box pos="absolute"  right="5%">
             <SliderControl changeIndex={changeIndex} index={newsIndex} slideref={slideref} startSlide={startSlide} stopSlide={stopSlide}/>
             </Box>

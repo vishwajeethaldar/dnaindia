@@ -1,9 +1,11 @@
+import { AdminRoutes } from "./Routes/AdminRoutes";
 import { Mainroutes } from "./Routes/Mainroutes";
 
 function App() {
   return (
     <div className="App">
-        <Mainroutes />
+      <Mainroutes />
+      <AdminRoutes />
     </div>
   );
 }

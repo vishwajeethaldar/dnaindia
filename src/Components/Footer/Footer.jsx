@@ -4,6 +4,10 @@ import { ExternalLinks } from './ExternalLinks';
 import { FooterLink } from './FooterLink';
 const news_links = [
     {
+        path:"/au-login",
+        text:"ADMIN-LOGIN"
+    },
+    {
         path:"/india",
         text:"INDIA"
     },
@@ -102,7 +106,7 @@ export const Footer = () => {
                 <Box w={['100%', '100%', '85%']}>
                     <Flex align={'center'} justify={['center', 'center', 'flex-start']} wrap={`wrap`} gap={`20px`}>
                             {news_links.map((item, i)=>{
-                                return <FooterLink path={item.path} text={item.text} borderRht={i<news_links.length-1}/>
+                                return <FooterLink key={item.path} path={item.path} text={item.text} borderRht={i<news_links.length-1}/>
                             })}
                     </Flex>
                 </Box>
@@ -127,7 +131,7 @@ export const Footer = () => {
                 <Box w={['100%', '100%', '85%']} display={['none', 'none', 'block']}>
                     <Flex  align={'center'} justify={['center', 'center', 'flex-start']} wrap={`wrap`} gap={`20px`}>
                             {info_links.map((item)=>{
-                                return <FooterLink path={item.path} text={item.text}/>
+                                return <FooterLink path={item.path} text={item.text} key={item.path}/>
                             })}
                     </Flex>
                 </Box>
@@ -144,7 +148,7 @@ export const Footer = () => {
                 <Box w={['100%', '100%', '85%']}>
                     <Flex align={'center'} justify={['center', 'center', 'space-between']} wrap={`wrap`} gap={`20px`}>
                             {partner_links.map((item)=>{
-                                return <ExternalLinks path={item.path} text={item.text}/>
+                                return <ExternalLinks path={item.path} text={item.text} key={item.path} />
                             })}
                     </Flex>
                 </Box>

@@ -1,7 +1,10 @@
 import React from 'react'
-
-export const MiddleSection = () => {
+import {Box, Grid, GridItem} from '@chakra-ui/react'
+export const MiddleSection = (props) => {
+  const {LeftNavbar} = props.children.first
   return (
-    <div>MiddleSection</div>
+    <Box>
+      <props.children.first.LeftNavbar />
+    </Box>
   )
 }

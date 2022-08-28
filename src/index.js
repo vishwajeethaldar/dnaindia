@@ -10,13 +10,15 @@ import Theme from './Theme/Theme.config';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppContextProvider >
+   
       <BrowserRouter>
         <ChakraProvider theme={Theme}>
+        <AppContextProvider >
           <App />
+          </AppContextProvider>
         </ChakraProvider>
       </BrowserRouter>
-    </AppContextProvider>
+   
 
   </React.StrictMode>
 );

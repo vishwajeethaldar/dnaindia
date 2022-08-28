@@ -6,35 +6,66 @@ import { ACTIONTYPES } from '../Context/actiontypes';
 import { Footer } from '../Components/Footer/Footer';
 import {Skeleton,Stack,Grid, GridItem, Box} from '@chakra-ui/react'
 import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
-import { BodyArea } from '../Components/Body/BodyArea';
+import { LatestNews } from '../Components/LatestNews/LatestNews';
+import { LeftNav } from '../Components/LeftNavbar/LeftNav';
+import { SearchBtn } from '../Components/Header/SearchBtn';
+import { HomePageTop } from '../Components/LatestNews/HomePageTop';
+import { NewsItemCard } from '../Components/Utils/NewsItemCard';
+import { MoreNewsLink } from '../Components/Utils/MoreNewsLink';
+import { HoemPageMid } from '../Components/Home/HoemPageMid';
+import { RightSection } from '../Components/RightSection/RightSection';
+
 export const Homepage = () => {
   const {state, dispatch} = useContext(AppContext);
 
   useEffect(()=>{
+    dispatch({tyep:ACTIONTYPES.SEARCH_DATA_SUCCESS, payLoad:{name:"123"}});
     dispatch({type:ACTIONTYPES.LOADING, payLoad:false})
+    dispatch({tyep:ACTIONTYPES.SEARCH_DATA_SUCCESS, payLoad:{name:"123"}});
   }, []);
 
   return (
-    <Stack w="100%">
-     
-       <Skeleton isLoaded={!state.isLoading}>
-          <Header />
+    <Stack w="100%"  bg='#eedeee'>
+      <Skeleton isLoaded={!state.isLoading}>
+          <Header>
+            <SearchBtn/>
+          </Header>
       </Skeleton>
       
       <Skeleton isLoaded={!state.isLoading}>
       <TopnewsSlider />
       </Skeleton>
 
-      <BodyArea  />
-      <Box marginLeft={'50px'} w={['98%', '90%', '90%']}>
-        
-        {/* <Grid minH="500px"  border='1px solid red'>
-            
-        </Grid> */}
-      </Box>
-      
+    <Box w={'100%'} >
 
-      <Footer />
+        <Grid  w={['98%', '90%', '90%']} mx='auto' templateColumns={['100%','100%','23% 50% 27%']}>
+            <GridItem >
+              <Skeleton isLoaded={!state.isLoading}>
+                  <Box display={['block', 'block', 'none']}>
+                    <LeftNav/>
+                  </Box>
+                  <Box display={['none', 'none', 'block']}>
+                    <LeftNavbar />
+                  </Box>
+              </Skeleton>
+              
+            </GridItem>
+
+            <GridItem>                  
+                <Stack>
+                  <HomePageTop/>  
+                  <HoemPageMid/>
+                </Stack>
+
+               
+            </GridItem>
+            <GridItem>
+              <RightSection/>
+            </GridItem>
+        </Grid>
+      </Box>
+
+    <Footer />
     </Stack>
   )
 }
