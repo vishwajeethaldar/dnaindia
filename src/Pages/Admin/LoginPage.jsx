@@ -17,6 +17,7 @@ export const LoginPage = () => {
 
     const handleLogin = ()=>{
         logInProcess(userState).then((res)=>{
+            localStorage.setItem('@token', JSON.stringify(res.data.token));
             dispatch({type:ACTIONTYPES.LOGIN_SUCCESS, payLoad:res.data.token})
         })
         // axios.post('https://reqres.in/api/login', {
@@ -40,9 +41,9 @@ export const LoginPage = () => {
             </Box>
             <FormControl>
                 <FormLabel mt="20px">UserName</FormLabel>
-                <Input name="email" onChange={handleChange}  value={userState.email} type={'email'} placeholder="Type your Username"/>
+                <Input name="email" onChange={handleChange}  value={userState.email} type="email" placeholder="Type your Username"/>
                 <FormLabel mt="20px">Password</FormLabel>
-                <Input name="passowrd" onChange={handleChange} value={userState.passowrd} type={'passowrd'} placeholder="Type your Username"/>
+                <Input name="passowrd" onChange={handleChange} value={userState.passowrd} type="password" placeholder="Type your Password"/>
                 <Button onClick={ handleLogin} colorScheme={'twitter'} my="20px" w="150px"> Login </Button>
             </FormControl>
             <Stack>

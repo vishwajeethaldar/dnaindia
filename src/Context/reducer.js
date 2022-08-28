@@ -1,12 +1,13 @@
 // import React from 'react';
 import{ ACTIONTYPES } from './actiontypes';
+const authToken = localStorage.getItem('@token');
 export const initState = {
       isLoading:true,
       isDataLoading:false,
       isSuccess:false,
       isError:false,
-      isAuth:false,
-      token:null,
+      isAuth:authToken?true:false,
+      token:authToken,
       data:[],
       singleData:{},
       query:"",

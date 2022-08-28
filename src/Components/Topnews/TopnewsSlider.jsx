@@ -1,11 +1,13 @@
-import {Box, Flex} from '@chakra-ui/react';
-import { useEffect, useRef, useState } from 'react';
+import {Box, Flex, SkeletonText} from '@chakra-ui/react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { getNews } from '../../api/api';
 import { NewsDisplayArea } from './NewsDisplayArea';
 import { SliderControl } from './SliderControl';
 import { SliderTitle } from './SliderTitle';
+import {AppContext} from '../../Context/AppContext'
 
 export const TopnewsSlider = () => {
+const {state, dispatch}  =  useContext(AppContext);
 const [topNews, setTopNews] =  useState([]);
 const [newsIndex, setNewsIndex] = useState(1);
 const slideref = useRef(null);
@@ -53,13 +55,15 @@ useEffect(() => {
 
   return (
     <Box w='100%'>   
+       <SkeletonText isLoaded={!state.isLoading || !state.isDataLoading }>
         <Flex w={['98%', '90%', '90%']} mx='auto' bg='darkblack' h='50px'>
-            <SliderTitle title={'Top News'} height='50px'/>
-            <NewsDisplayArea width="70%" height="50px" newsTitle={topNews[newsIndex] }/>
-            <Box pos="absolute"  right="5%">
-            <SliderControl changeIndex={changeIndex} index={newsIndex} slideref={slideref} startSlide={startSlide} stopSlide={stopSlide}/>
-            </Box>
-        </Flex>  
+                <SliderTitle title={'Top News'} height='50px'/>
+                <NewsDisplayArea width="70%" height="50px" newsTitle={topNews[newsIndex] }/>
+                <Box pos="absolute"  right="5%">
+                <SliderControl changeIndex={changeIndex} index={newsIndex} slideref={slideref} startSlide={startSlide} stopSlide={stopSlide}/>
+                </Box>
+            </Flex>  
+       </SkeletonText>
     </Box>
   )
 }

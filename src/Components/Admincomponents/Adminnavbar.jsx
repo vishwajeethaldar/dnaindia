@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 export const Adminnavbar = () => {
         const {state, dispatch} = useContext(AppContext);
         const HandleLogout=()=>{
+                localStorage.removeItem("@token")
                 dispatch({type:ACTIONTYPES.LOGOUT});
         }
   return (
