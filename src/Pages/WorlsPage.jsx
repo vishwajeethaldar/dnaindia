@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { Wordl } from '../Components/LeftNavbar/World/World';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const WorlsPage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -47,7 +48,7 @@ export const WorlsPage = () => {
                   <Wordl/>
               </GridItem>
               <GridItem>
-               
+              <RightSection/>
               </GridItem>
           </Grid>
         </Box>  

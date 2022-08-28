@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import{India} from '../Components/LeftNavbar/India/India';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 export const IndiaPage = () => {
     const {state, dispatch} = useContext(AppContext);
 
@@ -46,7 +47,7 @@ export const IndiaPage = () => {
                    <India />
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { Sports } from '../Components/LeftNavbar/Sports/Sports';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 export const SportsPage = () => {
     const {state, dispatch} = useContext(AppContext);
 
@@ -46,7 +47,7 @@ export const SportsPage = () => {
                    <Sports/>
               </GridItem>
               <GridItem>
-               
+               <RightSection />
               </GridItem>
           </Grid>
         </Box>

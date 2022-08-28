@@ -13,6 +13,7 @@ import { HomePageTop } from '../Components/LatestNews/HomePageTop';
 import { NewsItemCard } from '../Components/Utils/NewsItemCard';
 import { MoreNewsLink } from '../Components/Utils/MoreNewsLink';
 import { HoemPageMid } from '../Components/Home/HoemPageMid';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const Homepage = () => {
   const {state, dispatch} = useContext(AppContext);
@@ -59,7 +60,7 @@ export const Homepage = () => {
                
             </GridItem>
             <GridItem>
-             
+              <RightSection/>
             </GridItem>
         </Grid>
       </Box>

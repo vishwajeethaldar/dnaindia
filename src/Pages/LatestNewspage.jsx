@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { LatestNews } from '../Components/LatestNews/LatestNews';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 export const LatestNewsPage = () => {
     const {state, dispatch} = useContext(AppContext);
 
@@ -48,7 +49,7 @@ export const LatestNewsPage = () => {
               </GridItem>
 
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

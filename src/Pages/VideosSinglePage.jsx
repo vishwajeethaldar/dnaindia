@@ -10,6 +10,7 @@ import { Videos } from '../Components/LeftNavbar/Videos/Videos';
 import { VideoItemCard } from '../Components/LeftNavbar/Videos/VideoItemCard';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const VideosSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -48,7 +49,7 @@ export const VideosSinglePage = () => {
                  <VideoItemCard/>
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

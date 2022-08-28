@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { Business } from '../Components/LeftNavbar/Business/Business';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const BusinessPage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -45,7 +46,7 @@ export const BusinessPage = () => {
                     <Business/>
                 </GridItem>
                 <GridItem>
-                
+                <RightSection />
                 </GridItem>
             </Grid>
           </Box> 

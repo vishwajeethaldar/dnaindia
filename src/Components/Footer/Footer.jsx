@@ -4,6 +4,10 @@ import { ExternalLinks } from './ExternalLinks';
 import { FooterLink } from './FooterLink';
 const news_links = [
     {
+        path:"/au-login",
+        text:"ADMIN-LOGIN"
+    },
+    {
         path:"/india",
         text:"INDIA"
     },

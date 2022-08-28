@@ -11,6 +11,7 @@ import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { WorldNewsCard } from '../Components/LeftNavbar/World/WorldNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
 import { LatestNewsSingleNews } from '../Components/LatestNews/LatestNewsSingleNews';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const TopNewsPage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -50,7 +51,7 @@ export const TopNewsPage = () => {
               </GridItem>
 
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

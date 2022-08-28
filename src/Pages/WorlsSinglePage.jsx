@@ -10,6 +10,7 @@ import { Wordl } from '../Components/LeftNavbar/World/World';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { WorldNewsCard } from '../Components/LeftNavbar/World/WorldNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const WorlsSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -49,7 +50,7 @@ export const WorlsSinglePage = () => {
               </GridItem>
               
               <GridItem>
-               
+               <RightSection />
               </GridItem>
           </Grid>
         </Box>  

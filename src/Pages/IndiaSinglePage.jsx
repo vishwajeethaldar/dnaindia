@@ -10,6 +10,7 @@ import{India} from '../Components/LeftNavbar/India/India';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { IndiaNewsCard } from '../Components/LeftNavbar/India/IndiaNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const IndiaSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -48,7 +49,7 @@ export const IndiaSinglePage = () => {
                    <IndiaNewsCard />
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

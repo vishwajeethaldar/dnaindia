@@ -9,7 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { BusinesSingleNews } from '../Components/LeftNavbar/Business/BusinessSingleNews';
 import { SearchBtn } from '../Components/Header/SearchBtn';
-
+import {RightSection} from '../Components/RightSection/RightSection'
 export const BusinessSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
     useEffect(()=>{
@@ -41,12 +41,12 @@ export const BusinessSinglePage = () => {
                   </Box>
               </Skeleton>
               </GridItem>
-                  <BusinesSingleNews linkname="Personal Finance"/>
-              <GridItem>                  
                  
+              <GridItem>                  
+              <BusinesSingleNews linkname="Personal Finance"/>
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

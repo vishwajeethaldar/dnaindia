@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import {Education} from '../Components/LeftNavbar/Education/Education';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import {SearchBtn} from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 export const EducationPage = () => {
     const {state, dispatch} = useContext(AppContext);
 
@@ -46,7 +47,7 @@ export const EducationPage = () => {
                    <Education/>
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

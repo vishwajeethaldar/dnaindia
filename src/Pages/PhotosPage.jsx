@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { Photos } from '../Components/LeftNavbar/Photos/Photos';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const PhotosPage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -47,7 +48,7 @@ export const PhotosPage = () => {
                    <Photos/>
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

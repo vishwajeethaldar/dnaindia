@@ -10,6 +10,7 @@ import { Lifestyle } from '../Components/LeftNavbar/LifeStyle/Lifestyle';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { LifestyleNewsCard } from '../Components/LeftNavbar/LifeStyle/LifestyleNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const LyfeStyleSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -49,7 +50,7 @@ export const LyfeStyleSinglePage = () => {
               </GridItem>
 
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

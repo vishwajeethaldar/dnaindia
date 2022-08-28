@@ -16,3 +16,23 @@ export const searchNews = (path, query) => {
     }
   });
 }
+
+export const logInProcess = (userState)=>{
+  return axios.post('https://reqres.in/api/login', {
+    "email":userState.email,
+    "password":userState.passowrd
+})
+}
+
+export const addnewNews = (userState, path)=>{
+  return axios.post(`/${path}`, {
+    "category":userState.category,
+    "title":userState.title,
+    "subtitle":userState.subtitle,
+    "image":userState.image,
+    "altText":userState.altText,
+    "description":userState.description,
+    "tweetlink":userState.tweetlink,
+    "instalink":userState.instalink
+})
+}

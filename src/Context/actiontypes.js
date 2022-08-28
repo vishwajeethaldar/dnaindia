@@ -5,6 +5,7 @@ export const ACTIONTYPES = {
         LOGIN_REQ:'login-req',
         LOGIN_SUCCESS:'login-sucess',
         LOGIN_FAILURE:'loginfailure',
+        LOGOUT:'logout',
         LOADING:'loading',
         GET_SINGLE_DATA_GET_DATA_SUCESS:'get-single-data-success',
         SEARCH_QUERY_UPDATE:"search-query-update",

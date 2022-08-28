@@ -10,6 +10,7 @@ import {Education} from '../Components/LeftNavbar/Education/Education';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { EducationNewsCard } from '../Components/LeftNavbar/Education/EducationNewsCard';
 import {SearchBtn} from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 export const EducationSingleNewsPage = () => {
     const {state, dispatch} = useContext(AppContext);
 
@@ -47,7 +48,7 @@ export const EducationSingleNewsPage = () => {
                   <EducationNewsCard linkname="Education"/>
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

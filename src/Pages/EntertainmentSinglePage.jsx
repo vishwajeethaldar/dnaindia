@@ -10,6 +10,7 @@ import { Entertainment } from '../Components/LeftNavbar/Entertainment/Entertainm
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { EntertainmentNewsCard } from '../Components/LeftNavbar/Entertainment/EntertainmentNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const EntertainmentSinglePage = () => {
   const {state, dispatch} = useContext(AppContext);
@@ -48,7 +49,7 @@ export const EntertainmentSinglePage = () => {
                    <EntertainmentNewsCard linkname="Entertainment" />
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>

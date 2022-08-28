@@ -12,6 +12,8 @@ import { TopnewsSlider } from '../Components/Topnews/TopnewsSlider';
 import { WorldNewsCard } from '../Components/LeftNavbar/World/WorldNewsCard';
 import { NewsItemCard } from '../Components/Utils/NewsItemCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
+import { SearchNotFound } from '../Components/Utils/SearchNotFound';
 
 export const SearchResult = () => {
   const {state, dispatch, search, setSearch} = useContext(AppContext);
@@ -53,10 +55,12 @@ export const SearchResult = () => {
             </GridItem>
 
            
-            {!state.searchData.world?console.log("error"):(state.searchData.world.length===0&& state.searchData.india.length===0 &&state.searchData.sports.length===0&&state.searchData.business.length===0&&state.searchData.education.length===0)?console.log("in empty"): 
+            
               
-            <Skeleton isLoaded={state.searchData.world}>  
-              <GridItem>                  
+            
+              <GridItem>   
+              {!state.searchData.world?console.log("error"):(state.searchData.world.length===0&& state.searchData.india.length===0 &&state.searchData.sports.length===0&&state.searchData.business.length===0&&state.searchData.education.length===0)? <SearchNotFound/>:
+              <Skeleton isLoaded={state.searchData.world}>                
               {state.searchData.world&&state.searchData.world.map((item)=>{
                     return (
                       <Box key={item.id} bg='dimLight' h="100px" px="10px" py="10px" overflow={'hidden'}>
@@ -96,12 +100,14 @@ export const SearchResult = () => {
                       </Box>
                     )
                   })}
+              </Skeleton> 
+             }
               </GridItem>
-            </Skeleton> 
-            }
+            
+           
 
             <GridItem>
-             
+            <RightSection />
             </GridItem>
         </Grid>
       </Box> 

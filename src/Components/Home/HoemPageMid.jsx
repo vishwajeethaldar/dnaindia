@@ -20,7 +20,7 @@ useEffect(()=>{
     <Stack>
            <Business/>
            <Education/>
-           <VideoCard />
+           {/* <VideoCard /> */}
            <Sports/>
            <Entertainment/>
            <India/>

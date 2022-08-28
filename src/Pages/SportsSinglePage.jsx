@@ -10,6 +10,7 @@ import { Sports } from '../Components/LeftNavbar/Sports/Sports';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { WorldNewsCard } from '../Components/LeftNavbar/World/WorldNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const SportsSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -48,17 +49,12 @@ export const SportsSinglePage = () => {
                    <WorldNewsCard linkname={'Sports'}/>
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
         </Box>
   
-        <Box marginLeft={'50px'} w={['98%', '90%', '90%']}>
-          
-          {/* <Grid minH="500px"  border='1px solid red'>
-              
-          </Grid> */}
-        </Box>
+       
         
   
         <Footer />

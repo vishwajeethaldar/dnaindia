@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import { Videos } from '../Components/LeftNavbar/Videos/Videos';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const VideosPage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -47,18 +48,10 @@ export const VideosPage = () => {
                   <Videos />
               </GridItem>
               <GridItem>
-               
+              <RightSection />
               </GridItem>
           </Grid>
-        </Box>
-  
-        <Box marginLeft={'50px'} w={['98%', '90%', '90%']}>
-          
-          {/* <Grid minH="500px"  border='1px solid red'>
-              
-          </Grid> */}
-        </Box>
-        
+        </Box>      
   
         <Footer />
       </Stack>

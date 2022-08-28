@@ -1,8 +1,8 @@
 import React from 'react'
 import {Routes, Route} from 'react-router-dom'
-import { PrivateRoute } from '../Components/PrivateRoute'
+
 import { SearchResult } from '../Pages/SearchResult'
-import { Dashboard } from '../Pages/Admin/Dashboard'
+
 import { BusinessPage } from '../Pages/BusinessPage'
 import {BusinessSinglePage} from '../Pages/Business_Page_Single'
 import { EducationPage } from '../Pages/EducationPage'
@@ -29,8 +29,13 @@ import { ViralNewsSinglePage } from '../Pages/ViralNewsSinglePage'
 import { WorlsPage } from '../Pages/WorlsPage'
 import { WorlsSinglePage } from '../Pages/WorlsSinglePage'
 import { TopNewsPage } from '../Pages/TopNewsPage'
+import { LoginPage } from '../Pages/Admin/LoginPage'
+
+
+
 
 export const Mainroutes = () => {
+
   return (
     <Routes>
         <Route path='/' element={<Homepage />}/>
@@ -60,7 +65,9 @@ export const Mainroutes = () => {
         <Route path='/world/:id' element={<WorlsSinglePage />}/>
         <Route path='/search' element={<SearchResult />}/>
         <Route path='/topnews/:id' element={<TopNewsPage/>}/>
-        <Route path='/admin' element={<PrivateRoute> <Dashboard/> </PrivateRoute>}/>
+        <Route path='/au-login' element={<LoginPage/>}/>
+
+            
     </Routes>
   )
 }

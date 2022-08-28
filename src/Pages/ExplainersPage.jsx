@@ -9,6 +9,7 @@ import { LeftNavbar } from '../Components/LeftNavbar/LeftNavbar';
 import {Explainers} from '../Components/LeftNavbar/Explainers/Explainers'
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 export const ExplainersPage = () => {
     const {state, dispatch} = useContext(AppContext);
 
@@ -47,7 +48,7 @@ export const ExplainersPage = () => {
               </GridItem>
                
               <GridItem>
-               
+               <RightSection />
               </GridItem>
           </Grid>
         </Box>

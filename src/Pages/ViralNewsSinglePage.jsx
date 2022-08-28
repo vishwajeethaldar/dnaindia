@@ -10,6 +10,7 @@ import { Viralnews } from '../Components/LeftNavbar/ViralNews/ViralNews';
 import { LeftNav } from '../Components/LeftNavbar/LeftNav';
 import { ViralNewsCard } from '../Components/LeftNavbar/ViralNews/ViralNewsCard';
 import { SearchBtn } from '../Components/Header/SearchBtn';
+import { RightSection } from '../Components/RightSection/RightSection';
 
 export const ViralNewsSinglePage = () => {
     const {state, dispatch} = useContext(AppContext);
@@ -48,7 +49,7 @@ export const ViralNewsSinglePage = () => {
                   <ViralNewsCard linkname="Viral News" />
               </GridItem>
               <GridItem>
-               
+               <RightSection />
               </GridItem>
           </Grid>
         </Box>
