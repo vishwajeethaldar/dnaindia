@@ -1,4 +1,4 @@
-# Clone of dnaindia.com
+# clone of dnaindia.com
 
 ## About Project
 Cricbuzz is an Indian cricket news website owned by Times Internet. It features, news, articles and live coverage of cricket matches including videos, text commentary, player stats and team rankings. Their website also offers a mobile app.
